@@ -1,0 +1,60 @@
+// C++ code // const int buttonPinE = 9; const int buttonPinD = 10; const int buttonPin2 = 11; int buttonStateE = 0; int buttonStateD = 0; int buttonState2 = 0;
+
+void setup() { pinMode(buttonPinE,INPUT); pinMode(buttonPinD,INPUT); pinMode(buttonPin2,INPUT); pinMode(13, OUTPUT);//SETA ESQUERDA pinMode(12, OUTPUT);//SETA ESQUERDA pinMode(11, OUTPUT);//SETA DIREITA pinMode(10, OUTPUT);//SETA DIREITA
+
+}
+
+void loop() {
+
+buttonStateE = digitalRead(buttonPinE); buttonStateD = digitalRead(buttonPinD); buttonState2 = digitalRead(buttonPin2);
+
+//esquerda if (buttonStateE == HIGH){
+
+digitalWrite(1,HIGH); digitalWrite(2, HIGH);
+
+delay(1000);
+
+digitalWrite(1, LOW); digitalWrite(2, LOW);
+
+delay(1000);
+
+} else {
+
+digitalWrite(1,LOW); digitalWrite(2, LOW);
+
+}
+
+//direita
+if (buttonStateD == HIGH){
+
+digitalWrite(3,HIGH); digitalWrite(4, HIGH);
+
+delay(1000);
+
+digitalWrite(3, LOW); digitalWrite(4, LOW);
+
+delay(1000);
+
+} else {
+
+digitalWrite(3,LOW); digitalWrite(4, LOW);
+
+}
+
+//pisca alerta
+if (buttonState2 == HIGH){
+
+digitalWrite(3,HIGH); digitalWrite(4,HIGH); digitalWrite(1,HIGH); digitalWrite(2,HIGH);
+
+delay(1000);
+
+digitalWrite(3, LOW); digitalWrite(4, LOW); digitalWrite(1,LOW); digitalWrite(2, LOW);
+
+delay(1000);
+
+} else {
+
+digitalWrite(3,LOW); digitalWrite(4, LOW);
+
+}
+}
